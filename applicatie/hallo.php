@@ -9,7 +9,7 @@
     <title>Hallo</title>
 </head>
 <body>
-    <h1>hallo</h1>
+    <h1>hall</h1>
 
     Hoi <?= $voornaam ?>. Je bent <?= $age ?> jaar.
 </body>
