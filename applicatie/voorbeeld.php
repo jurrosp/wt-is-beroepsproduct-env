@@ -1,5 +1,5 @@
 <?php
-$naam = 'Voornaam Achternaam';
+$naam = 'Jurre Peeters';
 
 $vandaag = date_create('now');
 $datum = $vandaag->format('d-m-Y');
