@@ -4,6 +4,7 @@ $naam = 'Jurre Peeters';
 $vandaag = date_create('now');
 $datum = $vandaag->format('d-m-Y');
 
+$_GET['voornaam'];
 ?>
 <!DOCTYPE html>
 <html lang="nl">
