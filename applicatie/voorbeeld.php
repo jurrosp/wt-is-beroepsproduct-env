@@ -13,6 +13,6 @@ $datum = $vandaag->format('d F Y');
 </head>
 <body>
     Hallo <?= $naam ?>.<br>
-    Het is vandaag <?= $datum ?>.
+    Het is vandaag <?= $datum ?>. test
 </body>
 </html>
