@@ -1,5 +1,5 @@
 <?php
-header('Refresh:0');
+//header('Refresh:0');
 
 $naam = 'Jurre Peeters';
 
