@@ -1,4 +1,10 @@
 <?php
+
+$soort;
+if (isset($_GET['soort'])) {
+  $soort = $_GET['soort'];
+}
+
 $menu = [
   "Eten" => [
     "Shoarma" => 6.95,
@@ -15,9 +21,10 @@ $menu = [
   "Toetjes" => [
     "Ijsje" => 4.39,
     "Kaasplank" => 7.42
-  ]  
+  ]
 ];
-function genereerMenukaart($menu) {
+function genereerMenukaart($menu)
+{
   $html = "";
   foreach ($menu as $categorie => $producten) {
     $html .= "<h2>$categorie</h2>";
@@ -25,8 +32,13 @@ function genereerMenukaart($menu) {
   }
   return $html;
 }
-function genereerProducten($producten) {
+function genereerProducten($producten)
+{
   $html = "<table>";
+  if (isset($_GET['soort'])) {
+    $titel = $_GET['soort'];
+    $html .= "<h2>$titel</h2>";
+  }
   foreach ($producten as $product => $prijs) {
     $html .= "<tr>";
     $html .= "<td>$product</td>";
@@ -36,27 +48,37 @@ function genereerProducten($producten) {
   $html .= "</table>";
   return $html;
 }
-$htmlMenu = genereerMenukaart($menu);
+
+if (isset($_GET['soort'])) {
+  $htmlMenu = genereerProducten($menu[$soort]);
+} else {
+  $htmlMenu = genereerMenukaart($menu);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Restaurantmenu</title>
-    <style>
-      td:first-child {
-        width: 8em;
-      }
-      td:nth-child(2) {
-        font-style: italic;
-        text-align: right;
-        width: 4em;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Menu</h1>
-    
-    <?= $htmlMenu ?>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurantmenu</title>
+  <style>
+    td:first-child {
+      width: 8em;
+    }
+
+    td:nth-child(2) {
+      font-style: italic;
+      text-align: right;
+      width: 4em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Menu</h1>
+
+  <?= $htmlMenu ?>
+</body>
+
 </html>
