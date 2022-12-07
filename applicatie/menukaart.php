@@ -11,7 +11,11 @@ $menu = [
     "Ayran" => 2.30,
     "Fernandes" => 2.50,
     "Bier" => 5.50
-  ]
+  ],
+  "Toetjes" => [
+    "Ijsje" => 4.39,
+    "Kaasplank" => 7.42
+  ]  
 ];
 function genereerMenukaart($menu) {
   $html = "";
